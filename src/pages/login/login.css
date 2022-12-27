@@ -1,0 +1,66 @@
+.login_sideBar {
+    background-image: url('https://t4.ftcdn.net/jpg/01/73/87/55/240_F_173875594_YKuT1PxX9LygQtsODgDa0IJ93tszGNNf.jpg');
+  }
+
+  .login_mainContent {
+    text-align: center;
+    padding-top: 10em;
+  }
+
+.login_form input{
+  width: 50%;
+  margin: 0 auto;
+  margin-bottom: 2em;
+  padding: 10px;
+}
+
+.login_form button{
+    width: 20%;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 2em;
+    padding: 10px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+  }
+
+  .login_form button:hover{
+      cursor: pointer;
+      background-color: rgb(74, 74, 247);
+      
+  }
+
+  .login_form button:disabled{
+    cursor: not-allowed;
+    background-color: grey;
+    
+}
+
+  .login_form_span {
+      color:rgb(74, 74, 247);
+      
+  }
+
+  .login_form_span:hover {
+    cursor: pointer;
+    
+}
+
+.login_form_error {
+    color: red;
+    font-size: 0.8em;
+    margin-top: -1em;
+}
+
+@media (max-width:1025px) {
+    .login_mainContent {
+        display: block;
+        width: 100vw;
+    }
+    .main_content h1{
+       font-size: 1.5em;
+    }
+  
+  }

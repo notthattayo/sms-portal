@@ -1,0 +1,486 @@
+body{
+    max-height: 100vh;
+}
+
+.main_content_logout{
+    text-align: right;
+    padding-right: 20px;
+    background-color: rgb(1, 18, 46);
+    color:white;
+    display: flex;
+    vertical-align: middle;
+    justify-content: flex-end;
+}
+.main_content_logout p{
+    font-size: 0.8em;
+   margin-right: 60px;
+}
+
+.loading {
+    margin-left: 2em;
+}
+.main_content_logout span{
+    font-size: 0.8em;
+    align-self: center;
+    margin-right: 20px;
+    padding: 2px;
+}
+.main_content_logout span:hover{
+   background-color: rgb(74, 74, 247);
+   cursor: pointer;
+}
+.sideBar_search{
+    text-align: center;
+    margin-bottom: 1em;
+}
+.sideBar_search input{
+    width: 80%;
+    height: 40px;
+    
+}
+.sideBar_search input::placeholder{
+    padding-left: 2px;
+    
+}
+.conversations_close_btn{
+    display: none;
+}
+.conversations_sideBar{
+  border-right: solid 1px rgb(242, 240, 240);
+  background-color: rgb(1, 18, 46);
+  color: white;
+  height: 100vh;
+  min-width: 30vw;
+}
+.conversations_sideBar_tabs {
+    display: flex;
+    padding: 1em;
+    padding-bottom: 0;
+    text-align: center;
+    justify-content: space-around;
+}
+
+.conversations_empty{
+    width: 100%;
+}
+
+.conversations_empty img {
+    max-width: 100%;
+}
+.conversations_empty p{
+  text-align: center;
+  margin-top: 2em;
+  font-size: 1.3em;
+  font-weight: bold;
+}
+.conversations_sideBar_list{
+    overflow: scroll;
+    max-height: 80vh;
+}
+.conversations_sideBar_list_item {
+    border: 1px white solid;
+    border-radius: 10px;
+    margin:1em;
+    display: flex;
+}
+
+.conversations_sideBar_list_item:hover {
+    border: 1px white solid;
+    cursor: pointer;
+    background-color: rgb(74, 74, 247);
+}
+
+.conversations_filled {
+    background-image: url('../../../public/start-convo.png');
+    height: 85vh;
+    min-width: 70vw;
+}
+.conversations_filled h2 {
+   text-align: center;
+   margin-top: 1em;
+}
+.conversations_container {
+    height: 75vh;
+    margin: 0 auto;
+    width: 80%;
+    background-color: rgb(1, 18, 46,0.8);
+    color: white;
+    border-radius: 5%;
+    padding: 1em;
+    max-height: 80vh;
+    overflow-y: scroll;
+
+}
+.conversations_container .new_day_message {
+    text-align: center;
+    font-size: 0.9em;
+}
+.conversations_message_container {
+    display: flex;
+    align-items: center;
+}
+.conversations_message_container span {
+    margin-left: 10px;
+    font-size: 0.7em;
+}
+.conversations_message_from {
+    text-align: left;
+    border: solid 1px grey;
+    padding: 1em;
+    background-color: rgb(89, 88, 88);
+    width: max-content;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 30%;
+    margin-left: 2em;
+    max-width: 30%;
+    font-size: 0.9em;
+    overflow-wrap: anywhere;
+}
+.conversations_message_to {
+    text-align:left;
+    border: solid 1px grey;
+    padding: 1em;
+    background-color: darkgreen;
+    border-left-width: max-content;
+    border-top-right-radius: 10%;
+    border-bottom-right-radius: 30%;
+    margin-right: 2em;
+    margin-left: auto;
+    max-width: 30%;
+    width: fit-content;
+    font-size: 0.9em;
+    overflow-wrap: anywhere;
+}
+.chat_box{
+    width: 83%;
+    height: 5vh;
+    margin:5px auto;
+    display: flex;
+    justify-content: space-between;
+
+}
+.chat_box textarea{
+    width: 85%;
+    height: 100%;
+    border-radius: 5px;
+    border: solid 1px black;
+    padding: 1em;
+}
+.chat_box button {
+    align-self: center;
+    vertical-align: middle;
+    margin-top: 2em;
+    background-color: rgb(1, 18, 46);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+   
+}
+
+.chat_box button:hover {
+    cursor: pointer;
+    background-color: rgb(74, 74, 247);
+   
+}
+.contacts_sideBar_list{
+    margin: 1em;
+    height: 70vh;
+    overflow-y: scroll;
+}
+.contact_form_close_btn{
+cursor: pointer;
+text-align: right;
+margin-top: -5%;
+padding-top: 0;
+
+}
+.contacts_add_btn {
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: grey;
+  color: black;
+  font-size: 2em;
+  align-items: center;
+  vertical-align: middle;
+  position: absolute;
+  top: 90vh;
+  left: 23vw;
+}
+
+.contacts_add_btn:hover {
+    cursor: pointer;
+    color: black;
+    background-color: rgb(74, 74, 247);
+  }
+
+  .contacts_add_contact_form h3 {
+      text-align: center;
+      margin-top: -5%;
+  }
+
+  .contacts_add_contact_form{
+      color: black;
+      background-color: darkgray;
+      padding:5%;
+      border-radius: 3%;
+      max-width: 15vw;
+      position: absolute;
+      top:55vh;
+      left: 4vw;
+  }
+  .contacts_add_contact_form input{
+    display: block;
+    margin-top: 0.3em;
+    margin-bottom: 1em;
+    padding: 5px;
+    border-radius: 5px;
+    border: none;
+}
+
+.contacts_add_contact_form button{
+    background-color: grey;
+    color: black;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+}
+  
+.contacts_add_contact_form button:hover{
+    cursor: pointer;
+    color: white;
+    background-color: rgb(1, 18, 46);
+    
+}
+.contacts_reset_btn{
+    font-size: 0.9em;
+    margin-top: 1em;
+}
+  
+.contacts_reset_btn:hover{
+  cursor: pointer;
+}
+
+.contacts_list_item {
+    flex-wrap: nowrap;
+}
+.contacts_list_item .list_item_details{
+    flex-wrap: wrap;
+}
+.contacts_delete {
+    flex: 100%;
+    font-size: 0.8em;
+    align-self: center;
+    justify-content: center;
+    margin: 2em 1em;
+}
+.contacts_delete button {
+    margin-right: 10px;
+}
+
+.contacts_delete button:hover{
+    cursor: pointer;
+}
+
+.list_item_avatar {
+    margin: 10px;
+    height: 100%;
+    width: 15%;
+}
+.list_item_avatar img {
+    width: 50px;
+    height: 50px;
+    background-color: white;
+    border-radius: 50%;
+    
+}
+.list_item_details{
+    background-color: transparent;
+    color: white;
+    border: none !important;
+}
+.list_item_details h3{
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+.list_item_details p{
+    font-weight: 300;
+    font-size: 0.8em;
+}
+
+.list_item_contact_options{
+    font-size: 0.8em;
+    align-self: center;
+    justify-self: flex-end;
+}
+
+.list_item_contact_options li{
+    display: inline;
+    list-style: none;
+    padding: 0 5px;
+   
+}
+
+.list_item_contact_options li:hover{
+   border-bottom: solid black 1px;
+   border-radius: 2px;
+   
+}
+
+.tab_heading {
+    margin-right: 1em;
+    font-weight: 400;
+
+}
+.tab_heading:hover{
+    cursor: pointer;
+}
+.tab_heading_active {
+    font-weight: 600;
+    border-bottom: solid 1px rgb(74, 74, 247);
+    padding-bottom: 10px;
+}
+
+.feedback{
+   
+    height: 50px;
+    color: black;
+    position: absolute;
+    top:90vh;
+    width: 70%;
+    margin: 0 auto;
+}
+.feedback p {
+    font-size: 1em;
+    color: white;
+    padding-left: 1em;
+    padding-top: 0;
+}
+
+.feedback-mobile{
+    display: none;
+}
+
+.error{
+    background-color: red;
+}
+
+.success{
+    background-color: darkgreen;
+}
+
+
+@media (max-width:1025px) {
+    .conversations_empty p {
+        background-color: rgb(74, 74, 247);
+       color: white;
+       padding: 20px;
+       margin: 0 auto;
+       width: 70vw;
+       font-size: 1em;
+       border: none;
+       border-radius: 10px;
+       margin-top: 50%;
+    }
+    .conversations_empty span {
+        display: none;
+    }
+
+   
+
+    .conversations_hamburger div{
+        width: 35px;
+        height: 5px;
+        background-color: white;
+        margin: 6px 0;
+        color: white;
+    }
+    
+  .slide-bar{
+      width: 100vw !important;
+      display: block;
+      animation-name: slideBar;
+      animation-duration: 0.5s;
+  }
+  .unslide {
+      animation-name: unslideBar;
+      animation-duration: 0.5s;
+  }
+
+  .main_content_logout{
+    justify-content: space-evenly;
+    align-items: center;
+}
+.main_content_logout p{
+    font-size: 0.8em;
+  margin: 0;
+
+}
+.conversations_close_btn{
+    display: block;
+    font-size: 1.2em;
+    font-weight: bold;
+    margin-right: 1em;
+    margin-bottom: 0;
+    text-align: right;
+}
+
+.conversations_message_from {
+    width: 50%;
+    max-width: fit-content;
+
+}
+.conversations_message_to {
+    width: 50%;
+    max-width: fit-content;
+}
+
+.chat_box button {
+    margin-left: 1em;
+   
+}
+.contacts_add_btn {
+    left: 85%;
+    top: 90%
+  }
+  .contacts_add_contact_form{ 
+    max-width: 90vw;
+}
+.feedback-mobile{
+    display: block;
+}
+.list_item_contact_options ul {
+    display: flex;
+    flex-wrap: wrap;
+}
+.list_item_contact_options li {
+   padding-bottom: 20px;
+}
+  
+
+  }
+
+  @keyframes slideBar {
+      from {
+          opacity: 0;
+      }
+
+      to{
+          opacity: 1;
+          display: block;
+      }
+  }
+
+  @keyframes unslideBar {
+    from {
+        opacity: 1;
+    }
+
+    to{
+        opacity: 0;
+        display: none;
+    }
+}
