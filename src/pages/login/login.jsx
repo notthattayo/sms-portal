@@ -17,7 +17,7 @@ function Login() {
   const [errorMsg, setErrorMsg] = useState("");
 
   const loggedInRef = useRef(false);
-  const { employee } = useGetState();
+  const { employee, generalLoading } = useGetState();
   const { loginEmployeeAsync, registerEmployeeAsync } = useGetAsyncActions();
   const navigate = useNavigate();
 
@@ -65,14 +65,17 @@ function Login() {
               onChange={(e) => setPassword(e.target.value)}
               disabled
             ></input>
-
-            <button
-              onClick={(e) => handleSubmit(e)}
-              disabled={!email || !password}
-            >
-              {" "}
-              {login ? "Login" : "Register"}
-            </button>
+            {generalLoading ? (
+              <p>Logging you in...</p>
+            ) : (
+              <button
+                onClick={(e) => handleSubmit(e)}
+                disabled={!email || !password}
+              >
+                {" "}
+                {login ? "Login" : "Register"}
+              </button>
+            )}
             {/* <p>
               {login ? "Don't" : "Already"} have an account?{" "}
               <span

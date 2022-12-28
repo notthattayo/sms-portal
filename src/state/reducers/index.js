@@ -10,6 +10,7 @@ import { contactsReducer } from "./contactsReducer.js";
 import { employeeReducer } from "./employeesReducer";
 import {
   generalErrorReducer,
+  generalLoadingReducer,
   generalSuccessReducer,
 } from "./notificationsReducer";
 
@@ -23,6 +24,7 @@ const reducers = combineReducers({
   employee: employeeReducer,
   generalError: generalErrorReducer,
   generalSuccess: generalSuccessReducer,
+  generalLoading: generalLoadingReducer,
 });
 
 export default reducers;

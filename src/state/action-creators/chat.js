@@ -6,6 +6,7 @@ import axios from "axios";
 export const fetchChatHistory = (clear, from, to, dateBefore) => {
   return async (dispatch) => {
     const state = store.getState();
+
     if ((from, to, dateBefore)) {
       const { data } = await axios.post(
         `${process.env.REACT_APP_SERVER_URL}/messages/list-chat-history`,
@@ -16,16 +17,18 @@ export const fetchChatHistory = (clear, from, to, dateBefore) => {
         }
       );
 
-      const chats = sortMessages(
-        clear ? [] : state.chat,
-        data.historyTo,
-        data.historyFrom
-      );
+      if (data.historyTo.length > 0 && data.historyFrom.length > 0) {
+        const chats = sortMessages(
+          clear ? [] : state.chat,
+          data.historyTo,
+          data.historyFrom
+        );
 
-      dispatch({
-        type: FETCH_USER_CHATS,
-        payload: chats,
-      });
+        dispatch({
+          type: FETCH_USER_CHATS,
+          payload: chats,
+        });
+      }
     }
   };
 };

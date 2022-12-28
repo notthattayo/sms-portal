@@ -10,6 +10,7 @@ function useGetState() {
     employee: state.employee,
     generalError: state.generalError,
     generalSuccess: state.generalSuccess,
+    generalLoading: state.generalLoading,
     chat: state.chat,
   };
 }
